@@ -6,29 +6,29 @@
 //
 
 import SwiftUI
+import Foundation
 
-struct DateView: View {
-    var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        return formatter
-    }
-
-    @State private var birthDate = Date()
-
+struct DateView: View{
+    @State private var date = Date()
+    @State private var birthDate = ""
+    
     var body: some View {
-        HStack{
-            DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
-                Text("date")
-            }
-            .labelsHidden()
-            Spacer()
+        VStack {
+            DatePicker(selection: $date,in: ...Date(), displayedComponents: .date){}
+            //.datePickerStyle(GraphicalDatePickerStyle()) // Use graphical style for calendar input
+            .padding()
         }
-        //.offset(x:30)
     }
 
+    func formattedDateString() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy/MM/dd"
+        return dateFormatter.string(from: date)
+    }
 }
 
-#Preview {
-    DateView()
+struct DateView_Previews: PreviewProvider {
+    static var previews: some View {
+        DateView()
+    }
 }
