@@ -21,7 +21,7 @@ struct HomeView: View {
                     .shadow(color: .black, radius: 6, x: 0, y: -3)
                 VStack{
                     HStack{
-                        Text("Test")
+                        Text("Test Hi")
                             .padding()
                             .font(.system(size: 23, weight: .semibold, design: .default))
                         Spacer()
