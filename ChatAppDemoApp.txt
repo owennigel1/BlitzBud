@@ -1,0 +1,21 @@
+// 
+// ChatAppDemoApp.swift
+// ChatAppDemo
+// 
+
+import SwiftUI
+import FirebaseFirestore
+
+@main
+struct ChatAppDemoApp: App {
+
+    init() {
+        FirebaseApp.configure()
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
